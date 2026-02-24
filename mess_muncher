@@ -1,0 +1,23 @@
+import streamlit as st
+import random
+import time
+
+st.set_page_config(page_title="Mess Muncher", page_icon="🗑️", layout="wide")
+
+def fake_scan():
+    time.sleep(1.5)
+    return {
+        "emails": random.randint(80, 300),
+        "tabs": random.randint(12, 87),
+        "files": random.randint(45, 200),
+        "subs": random.randint(2, 9),
+        "savings": round(random.uniform(20, 150), 2)
+    }
+
+st.title("Mess Muncher 🗑️🍴")
+st.markdown("Your personal digital trash panda. Let me eat your junk—fast, no mercy.")
+
+with st.sidebar:
+    st.header("Options")
+    speed = st.slider("How aggressive?", 1, 5, 3, help="1 = gentle, 5 = nuclear")
+    keep_memories = st
